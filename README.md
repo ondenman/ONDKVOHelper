@@ -18,3 +18,6 @@ You are writing a class that requires the observation of several values. An inst
 	                                	@"networkControllerValueHasChanged",@"isControllerFat",
 	                                	nil];
 	```
+	```
+	self.KVOHelper = [[ONDKVOHelper alloc] initWithNSDictionaryOfKeysAndMethods:keysAndMethods AndReferenceToSelf:self];
+	```
