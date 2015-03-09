@@ -16,7 +16,6 @@
 //
 - (id)initWithNSDictionaryOfKeysAndMethods:(NSDictionary *)dictionary AndReferenceToSelf:(id)caller
 {
-
     if (self = [super init]) {
 
         self.keysDictionary = [[NSMutableDictionary alloc] init];
@@ -38,7 +37,6 @@
 // Register key for KVO. (NSKeyValueObservingOptionNew)
 - (void) registerKey:(NSString *)key
 {
-
     NSString *keyPathString = [NSString stringWithFormat:@"callingObject.%@",key];
     [self addObserver:self forKeyPath:keyPathString options:NSKeyValueObservingOptionNew context:nil];
     [self.keysDictionary setObject:key forKey:keyPathString];
@@ -47,7 +45,6 @@
 // Calls method on callingObject
 - (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-
     NSString *selectorKeyString = [self.keysDictionary objectForKey:keyPath];
     NSString *selectorString = [self.receivedDictionary objectForKey:selectorKeyString];
 
